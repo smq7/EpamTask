@@ -11,7 +11,7 @@ describe("Unit case 1", () => {
         await loginPage.open();
     });
 
-    it("Verifying if the 'username' has been provided", async() => {
+    it("Verifying if the 'username' has been provided", async () => {
         //fill field "username" and "password" with data
         await loginPage.formLogin.userField.setValue(dataProvider.badUsername);
         await loginPage.formLogin.passwordField.setValue(dataProvider.badPassword);

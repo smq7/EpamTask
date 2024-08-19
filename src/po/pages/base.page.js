@@ -1,7 +1,7 @@
 //The base page that all other components will  extends
 class BasePage {
     //set url for  page
-    constructor(url){
+    constructor(url) {
         this.url = url;
     }
     //open Page

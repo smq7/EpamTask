@@ -4,7 +4,7 @@ const BasePage = require("./base.page");
 
 //create class for inventory page
 class InventoryPage extends BasePage {
-    constructor(){
+    constructor() {
         super("https://www.saucedemo.com/inventory.html");
         this.headerInventory = new HeaderInventory();
     }

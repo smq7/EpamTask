@@ -4,7 +4,7 @@ const BasePage = require("./base.page");
 
 //create class for login page 
 class LoginPage extends BasePage {
-    constructor(){
+    constructor() {
         super("https://www.saucedemo.com/");
         this.formLogin = new FormLogin();
     }
