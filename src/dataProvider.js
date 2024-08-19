@@ -1,3 +1,4 @@
+// object data provider for Our tests 
 let dataProvider = {
     badUsername : "Vadym",
     badPassword : "Password",

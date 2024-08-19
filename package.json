@@ -4,7 +4,7 @@
   "description": "Epam Tast",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "wdio run src/config/wdio.conf.js",
     "wdio": "wdio run src/config/wdio.conf.js"
   },
   "keywords": [],

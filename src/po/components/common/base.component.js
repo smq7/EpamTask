@@ -1,12 +1,15 @@
+//The base component that all other components will  extends
 class BaseComponent {
 
-    constructor(rootSelector){
+    //set value for rootSelector
+    constructor(rootSelector) {
         this.rootSelector = rootSelector;
     }
 
-    get rootEl(){
+    // get root element from CSS selector
+    get rootEl() {
         return $(this.rootSelector);
     }
 }
-
+//export 
 module.exports = BaseComponent;
