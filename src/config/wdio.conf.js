@@ -1,4 +1,8 @@
 const { existsSync, mkdirSync } = require('fs');
+const os = require('os');
+
+const isWindows = os.platform() === 'win32';
+const isMac = os.platform() === 'darwin';
 exports.config = {
     //
     // ====================
@@ -22,7 +26,7 @@ exports.config = {
     // of the config file unless it's absolute.
     //
     specs: [
-        // './../tests/testOne.spec.js'
+        // './../tests/testForAcceptedInput.spec.js'
         './../tests/**.spec.js'
     ],
     // Patterns to exclude.
@@ -52,12 +56,22 @@ exports.config = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [
+      ...(isWindows ? [
         {
-        browserName: 'chrome'
-    }, 
-    {
-        browserName: 'MicrosoftEdge'
-    }
+            browserName: 'chrome',
+        },
+        {
+            browserName: 'MicrosoftEdge',
+
+        }
+    ] : []),
+
+    // Capabilities for macOS
+    ...(isMac ? [
+        {
+            browserName: 'chrome',
+        }
+    ] : [])
 ],
 
     //
@@ -67,7 +81,8 @@ exports.config = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'error',
+    logLevel: 'info',
+    outputDir: './logs',
     //
     // Set specific log levels per logger
     // loggers:
